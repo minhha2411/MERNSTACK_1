@@ -4,6 +4,10 @@ const app = express();
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema");
 const port = process.env.PORT || 5000;
+const connnectDB = require("./config/db");
+
+// Connect to DB
+connnectDB.connnectDB();
 
 app.use(
   "/graphql",
